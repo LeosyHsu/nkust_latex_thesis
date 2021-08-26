@@ -1,0 +1,76 @@
+\documentclass{NKUSTthesis}
+
+
+\title{Example to show how classes work}
+\author{Team Learn ShareLaTeX}
+\date{August 2014}
+
+\ifdefined\firstpage
+  % digital object identifier
+  \ifdefined\withdoi
+    \insertdoi
+  \fi
+\fi
+
+\makeatletter
+\AtBeginDocument{
+  \hypersetup{
+    pdftitle={\@titleen},
+    pdfauthor={\@authoren},
+    pdfsubject={\@typeen{} \@classen},
+    pdfkeywords={\@keywordsen}
+  }
+}
+\xpatchcmd{\@chapter}{%
+\addtocontents{lof}{\protect\addvspace{10\p@}}%
+\addtocontents{lot}{\protect\addvspace{10\p@}}%
+}{}{}{}
+\makeatother
+
+\input{NKUSTvars}
+\begin{document}
+\frontmatter
+
+\makefrontcover
+\maketitlepage
+
+\ifdefined\excludefirstpage
+  % digital object identifier
+  \ifdefined\withdoi
+    \insertdoi
+  \fi
+\fi
+
+\makeapproval
+\pagenumbering{roman}
+\input{abstract}
+\input{acknowledgements}
+
+% \pagenumbering{roman}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\contentsname}
+\tableofcontents
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\mainmatter
+\input{chapters/introduction}
+\input{chapters/background}
+\input{chapters/design}
+\input{chapters/implementation}
+\input{chapters/evaluation}
+\input{chapters/conclusion}
+
+\backmatter
+\phantomsection
+\normalem
+\printbibliography[heading=bibintoc,title={參考文獻}]
+
+\end{document}
