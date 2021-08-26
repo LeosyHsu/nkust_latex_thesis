@@ -1,0 +1,35 @@
+{
+    "latex-workshop.latex.outDir": "%DIR%/build",                 // 輸出在根目錄底下的build
+    "latex-workshop.latex.rootFile.doNotPrompt": false,
+    "latex-workshop.latex.rootFile.useSubFile": false,
+    "latex-workshop.latex.external.build.command": "make",
+    "latex-workshop.latex.external.build.args": ["all"],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.xwm",
+        "*.sta",
+        "*.bcf",
+        "*.run",
+        "*.xml",
+        "*.gz"
+    ]
+}
