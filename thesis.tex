@@ -1,38 +1,24 @@
 \documentclass{NKUSTthesis}
 
+\input{Thesis_Info.tex}
+\input{Thesis_Config.tex}
+\input{templates/template.tex}
 
 \title{Example to show how classes work}
 \author{Team Learn ShareLaTeX}
 \date{August 2014}
 
-\ifdefined\firstpage
-  % digital object identifier
-  \ifdefined\withdoi
-    \insertdoi
-  \fi
-\fi
-
 \makeatletter
-\AtBeginDocument{
-  \hypersetup{
-    pdftitle={\@titleen},
-    pdfauthor={\@authoren},
-    pdfsubject={\@typeen{} \@classen},
-    pdfkeywords={\@keywordsen}
-  }
-}
-\xpatchcmd{\@chapter}{%
-\addtocontents{lof}{\protect\addvspace{10\p@}}%
-\addtocontents{lot}{\protect\addvspace{10\p@}}%
-}{}{}{}
+
 \makeatother
 
-\input{NKUSTvars}
 \begin{document}
 \frontmatter
 
-\makefrontcover
-\maketitlepage
+% 封面
+\input{instance/booktitle.tex}
+% 書名頁
+\input{instance/titlepage.tex}
 
 \ifdefined\excludefirstpage
   % digital object identifier
@@ -41,10 +27,19 @@
   \fi
 \fi
 
-\makeapproval
+
+% 審定書
+\ifdefined\withapproval
+  \includepdf[pages={\approvalpage},angle=0]{\approval}
+\else
+  \input{instance/approval.tex}
+\fi
+
 \pagenumbering{roman}
-\input{abstract}
-\input{acknowledgements}
+\bookbindinglayout
+\watermark
+\input{instance/abstract}
+\input{instance/acknowledgements}
 
 % \pagenumbering{roman}
 \clearpage

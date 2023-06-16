@@ -1,0 +1,215 @@
+
+% ----------------------------
+%   字型設定
+% ----------------------------
+
+\usepackage{xeCJK}
+\usepackage{CJKnumb}    
+\usepackage{zhnumber}   %提供了用于排版中文数字表示的命令
+\usepackage{amsfonts}   %用於數學的一組擴展字體
+% \usepackage{CJKutf8}
+
+
+% setup font
+\defaultfontfeatures{AutoFakeBold=2.5,AutoFakeSlant=.2}
+\setmainfont[
+  Path={./fonts/},
+  BoldFont={timesbd},
+  ItalicFont={timesi},
+  BoldItalicFont={timesbi}
+]{times}   % 英文字體
+
+\setCJKmainfont[
+  Path=./fonts/ , 
+  % AutoFakeBold=true,
+  % AutoFakeSlant=true
+]{\CJKmainfont}       %中文字體
+
+\setCJKfamilyfont{kai}[Path=./fonts/]{kaiu}
+\newcommand{\fontkai}{\CJKfamily{kai}} %標楷體
+\setCJKfamilyfont{ming}[Path=./fonts/,BoldFont={mingliub}]{mingliu}
+\newcommand{\fontming}{\CJKfamily{ming}} %新細明體
+
+% \linespread{1.5}
+
+
+% ----------------------------
+%   超連結
+% ----------------------------
+\usepackage{hyperref}
+\usepackage{url}
+
+\AtBeginDocument{
+  \hypersetup{
+    pdfpagemode={UseOutlines},
+    linktoc=all,
+    unicode,
+    hidelinks,
+    pdfcreator={\@authoren \ \@authorzh},
+	  pdfproducer={\@authoren  , \@advisoren},
+    pdftitle={\@titleen},
+    pdfauthor={\@authoren},
+    pdfsubject={\@typeen{} \@classen},
+    pdfkeywords={\@keywordsen}
+  }
+}
+
+
+% ----------------------------
+%   浮水印
+% ----------------------------
+
+\usepackage[contents={}]{background} %如果沒有給 contest空白會自動加上 draft 浮水印字樣
+
+% 浮水印參數定義
+\newcommand\watermark {
+	\ifdefined\withwatermark
+    \backgroundsetup{
+      contents={\includegraphics[]{\watermarkimage}},
+      scale=1.25,
+      opacity=0.3,
+      angle=0
+    }
+    \fi
+}
+
+
+% ----------------------------
+%   標題
+% ----------------------------
+
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage[center]{titlesec}
+\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\CJKnumber\thechapter\,章}{1em}{}
+\titleformat{\section}{\raggedright\Large\bfseries}{\,\thesection\,}{1em}{}
+\titleformat{\subsection}{\raggedright\large\bfseries}{\,\thesubsection\,}{1em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+\captionsetup{labelsep=quad} % graphics caption ':' -> ' '
+
+
+% ----------------------------
+%   目錄
+% ----------------------------
+
+\usepackage{titletoc}
+\usepackage{xpatch}
+\titlecontents{chapter}[0em]{}{第\CJKnumber{\thecontentslabel}章\quad}{}{\titlerule*[1em]{}\contentspage}
+\renewcommand{\contentsname}{目錄}
+\renewcommand{\tablename}{表}
+\renewcommand{\listtablename}{表目錄}
+\renewcommand{\figurename}{圖}
+\renewcommand{\listfigurename}{圖目錄}
+
+
+% ----------------------------
+%   排版擴充
+% ----------------------------
+
+\usepackage{indentfirst}  %首行縮排
+\usepackage{setspace} % 行距
+\usepackage[section]{placeins}
+\usepackage{templates/template_layout}
+% \usepackage{fancyhdr}
+
+% prevent placing floats before a section
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+% \setlength{\parindent}{0.88cm} %縮排設定
+\setlength{\parindent}{2em} %縮排設定
+
+
+% ----------------------------
+%   數學
+% ----------------------------
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{dsfont}
+\usepackage{mathtools}
+
+
+% ----------------------------
+%   繪圖
+% ----------------------------
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage[subpreambles]{standalone}
+\usepackage{amscd}
+
+\graphicspath{ {./figures/} }
+\pgfplotsset{compat=1.16}
+
+\usetikzlibrary{calc,matrix,decorations.markings,decorations.pathreplacing,decorations.text}
+\usetikzlibrary{arrows,shapes,chains}
+\usetikzlibrary{automata,arrows.meta,positioning} % draw states
+
+
+% ----------------------------
+%   表格
+% ----------------------------
+
+\usepackage{multirow}
+\usepackage{longtable}
+
+
+% ----------------------------
+%   程式碼
+% ----------------------------
+
+\usepackage[nounderscore]{syntax}
+\usepackage{listings}
+
+% source code highlighting
+\lstset{
+  numbers=none,
+  captionpos=b,
+  tabsize=2,
+  basicstyle=\small,
+  frame = single
+}
+
+
+% ----------------------------
+%   演算法
+% ----------------------------
+
+% \usepackage{algorithm}
+% \usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
+\usepackage[linesnumbered,noline,boxed]{algorithm2e}
+% \usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
+\usepackage[skins]{tcolorbox}
+\usepackage{float}
+
+% ----------------------------
+%   條列式清單
+% ----------------------------
+
+\usepackage{enumerate}
+
+
+% ----------------------------
+%   額外擴充
+% ----------------------------
+
+\usepackage{ulem} %下劃線,刪除線.....
+
+
+
+
+
+
+% bibliography
+% \usepackage[redeflists]{IEEEtrantools}
+\usepackage[backend=biber,sorting=none,style=ieee,seconds=true]{biblatex}
+\addbibresource{reference.bib}
+
+
+

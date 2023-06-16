@@ -19,13 +19,26 @@ LATEXARGS+="\def\withdoi{1} "
 endif
 
 ifdef APPROVAL
-LATEXARGS+="\def\withapproval{1} "
+LATEXARGS+="\def\withapprovalen{1} "
+LATEXARGS+="\def\withapprovalzh{1} "
+endif
+
+ifdef APPROVALEN
+LATEXARGS+="\def\withapprovalen{1} "
+endif
+
+ifdef APPROVALZH
+LATEXARGS+="\def\withapprovalzh{1} "
 endif
 
 ifdef FIRSTPAGE
 LATEXARGS+="\def\firstpage{1} "
 else
 LATEXARGS+="\def\excludefirstpage{1} "
+endif
+
+ifdef DRAFT
+LATEXARGS+="\def\thesisdraft{1} "
 endif
 
 LATEXARGS+="\input{${DOCNAME}}"
