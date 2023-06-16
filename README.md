@@ -51,11 +51,8 @@ $ make
 # 加入中英文審定書以及浮水印
 $ make APPROVAL=1 WATERMARK=1
 
-# 只加入英文審定書
-$ make APPROVALEN=1
-
-# 只加入中文審定書
-$ make APPROVALZH=1
+# 只加入審定書
+$ make APPROVAL=1
 
 # 只加入浮水印
 $ make WATERMARK=1
