@@ -19,16 +19,7 @@ LATEXARGS+="\def\withdoi{1} "
 endif
 
 ifdef APPROVAL
-LATEXARGS+="\def\withapprovalen{1} "
-LATEXARGS+="\def\withapprovalzh{1} "
-endif
-
-ifdef APPROVALEN
-LATEXARGS+="\def\withapprovalen{1} "
-endif
-
-ifdef APPROVALZH
-LATEXARGS+="\def\withapprovalzh{1} "
+LATEXARGS+="\def\withapproval{1} "
 endif
 
 ifdef FIRSTPAGE
