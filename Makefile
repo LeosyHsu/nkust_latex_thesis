@@ -28,6 +28,10 @@ else
 LATEXARGS+="\def\excludefirstpage{1} "
 endif
 
+ifdef DRAFT
+LATEXARGS+="\def\thesisdraft{1} "
+endif
+
 LATEXARGS+="\input{${DOCNAME}}"
 
 

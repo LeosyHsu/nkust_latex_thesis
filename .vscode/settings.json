@@ -1,0 +1,11 @@
+{
+    "latex-workshop.latex.outDir": "%DIR%", //編譯後pdf輸出位置
+    "latex-workshop.latex.external.build.command": "make",
+    "latex-workshop.latex.external.build.args": ["WATERMARK=True","DRAFT=True"], //編譯參數
+    "latex-workshop.view.pdf.viewer": "tab", //預設pdf瀏覽器 "browser", "tab" ot "external"
+    "latex-workshop.latex.autoBuild.run": "onFileChange", //檔案變更後編譯 "onFileChange","onSave" or "never" 
+    "latex-workshop.synctex.synctexjs.enabled": true,
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.hover.preview.enabled":true, //懸停預覽
+    "latex-workshop.hover.citation.enabled": true,
+}

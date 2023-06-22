@@ -9,13 +9,16 @@
 │   └── ...                                 =>  此目錄可以放置論文所使用的圖片
 ├── chapters
 │   └── ...                                 =>  此目錄放置的是論文內文
+├── instance
+│   └── ...                                 =>  此目錄放置的是目錄頁前的頁面
+├── templates
+│   └── ...                                 =>  此目錄放置論文使用的package、package設定以及版面設定
 │ 
-├── abstract.tex                            =>  中英文摘要
-├── acknowledgements.tex                    =>  誌謝
 ├── reference.bib                           =>  參考文獻
 │ 
-├── NKUSTthesis.tex                         =>  該樣板所用到套件、以及格式定義
-├── NKUSTvars.tex                           =>  填寫論文作者、指導教授......相關資料
+├── NKUSTthesis.cls                         =>  該樣板所用格式定義
+├── Thesis_Info.tex                         =>  填寫論文作者、指導教授......相關資料
+├── Thesis_Config.tex                       =>  修改論文相關設定
 ├── thesis.tex                              =>  該論文結構定義檔
 │ 
 ├── Makefile                                =>  make執行指令
@@ -25,6 +28,13 @@
 
 ***快速上手本樣板只須閱讀 [執行指令](#執行指令) 以及 [撰寫內容](#撰寫內容) 後運行即可，其餘圖片、公式以及引用等等......語法不熟悉者請看[這邊](docs/SAMPLE.md)***。
 ---
+
+## 環境安裝
+```
+sudo apt update
+sudo apt-get install texlive texlive-base texlive-xetex texlive-lang-chinese texlive-bibtex-extra biber texlive-science texlive-fonts-extra libsynctex-dev chktex
+```
+
 ## 執行指令
 ```
 $ make clean
@@ -36,9 +46,9 @@ $ make
 - `make clean-all` 清除編譯檔案包含 thesis.pdf。
 
 - 其中 `make` 進行編譯還可以加入兩個參數分別是 `APPROVAL=1` 以及 `WATERMARK=1`，前者為加入口試委員已簽名之審定書；後者為加入背景浮水印，詳情請參閱 `Makefile`。
-- 另外，使用 `APPROVAL=1` ***須確認根目錄下有 `approval.pdf` 檔案才不會出錯***，而 `approval.pdf` 為兩頁
+- 另外，使用 `APPROVAL=1` ***須確認 `pdf` 資料夾下有 `approval.pdf` 檔案才不會出錯***
 ```
-# 加入審定書以及浮水印
+# 加入中英文審定書以及浮水印
 $ make APPROVAL=1 WATERMARK=1
 
 # 只加入審定書
@@ -46,6 +56,9 @@ $ make APPROVAL=1
 
 # 只加入浮水印
 $ make WATERMARK=1
+
+# 只加入初稿
+$ make DRAFT=1
 ```
 
 
@@ -91,9 +104,11 @@ $ make WATERMARK=1
 ## 設定檔案 (釐清框架結構)
 
 ### fonts
-> 該目錄可以依據需求自行加入所需要之字體，但須額外設置 `NKUSTthesis.tex Line 140` 的設定值。
+> 該目錄可以依據需求自行加入所需要之字體，但須額到`templates/template.tex`設置。
 - `kaiu.ttf` 為正常字體，楷書。
     - 由於 NKUSTthesis.tex 裡面沒有額外定義其他斜體、粗體、粗斜體，因此使用 LaTeX 內建AutoFake自動生成。
+- `mingliu.ttc` 為正常字體，新細明體。
+- `mingliub.ttc` 為粗體，新細明體。
 - `times.ttf` 為正常字體，Times New Roman。
 - `timesi.ttf` 為斜體，*Times New Roman*。
 - `timesbd.ttf` 為粗體，**Times New Roman**。
@@ -104,10 +119,12 @@ $ make WATERMARK=1
 
 ### thesis.tex
 > 論文結構順序，涵蓋 封面、書名、審定書、摘要、誌謝、目錄、表目錄、圖目錄、內文以及參考文獻。
-- 其中 `封面` 、 `書名` 以及 `審定書` 指令接定義在 `NKUSTthesis.tex`。
-    - \makefrontcover
-    - \maketitlepage
-    - \makeapproval
+- 其中 `封面` 、 `書名`、 `審定書` 、`摘要` 以及 `致謝` 皆放在在 `instance`。
+    - booktitle.tex
+    - titlepage.tex
+    - approval.tex
+    - abstract.tex
+    - acknowledgements.tex
 - 而 `摘要` 、 `誌謝` 是以環境命令定義於 `NKUSTthesis.tex`，使用在 `abstract.tex` 與`acknowledgements.tex`。
     - \abstractzh & \abstracten
     - \acknowledgements

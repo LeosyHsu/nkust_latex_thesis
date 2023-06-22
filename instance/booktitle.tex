@@ -1,0 +1,38 @@
+%----------------------------------------------------------------------------------------
+%	封面
+%----------------------------------------------------------------------------------------
+
+
+% \newcommand{\makefrontcover}{
+\begin{titlepage}
+    % \backgroundsetup{contents={}}
+    \makeatletter
+    % \vspace*{0.5cm}
+    \begin{center}
+        \makebox[9cm][s]{\Huge {\@universityzh}} \\[0.5cm]
+        \makebox[9cm][s]{\Huge {\@institutezh\@degreezh 班}} \\[0.5cm]
+        \makebox[4cm][s]{\huge \@degreezh\@classzh} \\[4cm]
+
+        %\includegraphics[scale=0.33]{figures/logo.png} \\[1cm]
+        {\LARGE \@titlezh} \\[0.5cm]
+        {\LARGE \@titleen} 
+        % \vspace{\fill}
+        \ifdefined\thesisdraft
+            \\[3cm]
+            {\LARGE  {（初稿）}}
+            \vspace{\fill}
+        \else
+            \vspace{\fill}
+        \fi
+
+        \begin{center}
+            \begin{tabular}{c l}
+                {\makebox[8em][s]{\Large 研究生}} \Large ： & \Large \@authorzh \hspace{0.1cm}  \\[0.5cm]
+                {\makebox[8em][s]{\Large 指導教授}} \Large ： & \Large \@advisorzh \hspace{0.1cm} 博士 \\
+            \end{tabular}
+        \end{center}
+        \vspace{3cm}
+        {\LARGE 中華民國 \zhnumber{\@yearzh} 年 \zhnumber{\@monthzh} 月} \\
+    \end{center}
+\end{titlepage}
+% }

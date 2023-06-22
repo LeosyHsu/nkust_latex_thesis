@@ -1,0 +1,39 @@
+%----------------------------------------------------------------------------------------
+%	書名頁
+%----------------------------------------------------------------------------------------
+
+% \newcommand{\maketitlepage}{
+  \begin{titlepage}
+    \makeatletter
+    \begin{center}
+        \begin{singlespace}
+        \vspace*{0.5cm}
+        \Large \@titlezh \\[0.5cm]
+        \Large \@titleen \\[1cm]
+        \begin{tabular}{c l}
+            {\makebox[4em][s]{\large 研究生}} \large ： & \large \@authorzh \\
+            {\makebox[4em][s]{\large 指導教授}} \large ： & \large \@advisorzh \hspace{0.1cm} 博士 \\
+        \end{tabular} \\[1cm]
+        \Large
+        \@universityzh \\[0.1cm]
+        \@institutezh\@degreezh 班\\[0.1cm]
+        \@degreezh\@classzh \\[1cm]
+        \begin{singlespace}
+            A Thesis\\
+            Presented to \\
+            \@instituteen\\
+            \@universityen\\
+            in Partial Fulfillment of the Requirements\\
+            for the Degree of \\
+            \@degreeen \,of Engineering\\
+            in\\
+            \@major\\[1cm]
+            \@monthen, \@yearen \\
+            Kaohsiung, Taiwan, Republic of China \\
+        \end{singlespace}
+        \vspace{\fill}
+        中華民國 \zhnumber{\@yearzh} 年 \zhnumber{\@monthzh} 月\\
+        \end{singlespace}
+    \end{center}
+  \end{titlepage}
+% }
