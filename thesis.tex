@@ -49,11 +49,19 @@
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
+{% 表目錄
+\let\oldnumberline\numberline%
+\renewcommand{\numberline}{\tablename~\oldnumberline}%
+\listoftables%
+}
 \clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
+{% 圖目錄
+\let\oldnumberline\numberline%
+\renewcommand{\numberline}{\figurename~\oldnumberline}%
+\listoffigures%
+}
 
 \mainmatter
 \input{chapters/introduction}

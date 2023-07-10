@@ -67,9 +67,7 @@
 \begin{center}
   \large
   \begin{singlespace}
-    \@universityzh \\
-    \@institutezh \\
-    \@degreezh \\[0.5cm]
+    \vspace*{0.5cm}
     \textbf{\@titlezh} \\[0.5cm]
   \end{singlespace}
   \begin{singlespace}
@@ -83,6 +81,9 @@
             指導教授：\@advisorzh \hspace{0.1cm}博士
         \end{flushright}
     \end{minipage}
+    \\
+    \vspace{1cm}
+    \@universityzh\@institutezh \@degreezh 班\\
   \end{singlespace}
   \LARGE {\makebox[4em][s]{摘要}} \\[0.5cm]
 \end{center}
@@ -99,9 +100,8 @@
 \begin{center}
   \large
   \begin{singlespace}
-    \@universityen \\
-    \@instituteen \\
-    \@degreeen \\[0.5cm]
+    \vspace*{0.5cm}
+    
     \textbf{\@titleen}\\[0.5cm]
   \end{singlespace}
   \begin{singlespace}
@@ -115,6 +115,10 @@
             Advisor：\@advisoren \hspace{0.1cm}Ph.D
         \end{flushright}
     \end{minipage}
+    \\
+    \vspace{0.5cm}
+    \@instituteen \\
+    \@universityen \\ 
   \end{singlespace}
   \LARGE {\makebox[4em][s]{Abstract}} \\[0.5cm]
 \end{center}
