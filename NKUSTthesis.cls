@@ -42,9 +42,10 @@
 
 % Declarations
 \newcommand{\puniversity}[2]{\gdef\@universityen{#1}\gdef\@universityzh{#2}}
+\newcommand{\pcampus}[2]{\gdef\@campusen{#1}\gdef\@campuszh{#2}}
 \newcommand{\pcollege}[2]{\gdef\@collegeen{#1}\gdef\@collegezh{#2}}
 \newcommand{\pinstitute}[2]{\gdef\@instituteen{#1}\gdef\@institutezh{#2}}
-\newcommand{\pclass}[2]{\gdef\@calssen{#1}\gdef\@classzh{#2}}
+\newcommand{\pclass}[2]{\gdef\@classen{#1}\gdef\@classzh{#2}}
 \newcommand{\pdegree}[2]{\gdef\@degreeen{#1}\gdef\@degreezh{#2}}
 \newcommand{\pmajor}[1]{\gdef\@major{#1}}
 \newcommand{\ptitle}[2]{\gdef\@titleen{#1}\gdef\@titlezh{#2}}
