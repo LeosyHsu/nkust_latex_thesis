@@ -39,7 +39,10 @@
 \bookbindinglayout
 \watermark
 \input{instance/abstract}
-\input{instance/acknowledgements}
+\ifdefined\thesisdraft
+\else
+  \input{instance/acknowledgements}
+\fi
 
 % \pagenumbering{roman}
 \clearpage
