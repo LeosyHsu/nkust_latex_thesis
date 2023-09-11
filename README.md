@@ -61,6 +61,12 @@ $ make WATERMARK=1
 $ make DRAFT=1
 ```
 
+### Tips
+如果使用VSCode的Latex Workshop Plugin請直接編輯`.vscode\setting.json`
+```
+"latex-workshop.latex.external.build.args": ["WATERMARK=True","DRAFT=True"], //編譯參數
+```
+
 
 ## 撰寫內容
 
@@ -132,3 +138,7 @@ $ make DRAFT=1
     - \tableofcontents
     - \listoftables
     - \listoffigures
+
+### 匯入審定書
+    請先創建`pdf`的資料夾，並將掃描好的審定書名稱改為`approval.pdf`放進資料夾後即可。
+

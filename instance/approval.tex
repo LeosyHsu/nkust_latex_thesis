@@ -5,7 +5,7 @@
       \begin{center}
       \fontkai
       % \vspace*{0.5cm}
-      {\fontsize{16pt}{0pt}\selectfont \textbf{國立高雄科技大學(\hspace{2em}校區)研究所學位論文考試審定書}}\\[1.5cm]
+      {\fontsize{16pt}{0pt}\selectfont \textbf{國立高雄科技大學(\@campuszh 校區)研究所學位\@classzh 考試審定書}}\\[1.5cm]
       
       {\large \uline{\hspace{3cm} \makebox[6cm][s]{ {\@institutezh \@degreezh 班}} \hspace{3cm}}} \\[1cm]
       % \vspace{0.5cm}
@@ -13,7 +13,7 @@
       
       \begin{flushleft}
           \begin{tabular}{lp{10cm} lp{10cm}}
-              {\large 論文名稱(中文):\hspace{1em}} &{\large \@titlezh }\\[0.5cm]
+              {\large 論文名稱(中文):\hspace{1em}} &{\large \@titlezh }\\[1cm]
               {\large 論文名稱(英/日/德文):} &{\large \@titleen}
           \end{tabular}
       \end{flushleft}
@@ -48,44 +48,46 @@
 \begin{titlepage}
   \makeatletter
   \begin{singlespace}
-      \begin{center}
-      \vspace*{0.5cm}
-      {\Large \@titleen} \\
-      \vspace{0.5cm}
-      \large
-      by \\
-      \vspace{0.5cm}
-      \@authoren \\
-      \vspace{1cm}
-      A Thesis \\
-      Presented to \\
-      \@instituteen \\
-      \@universityen \\
-      in Partial Fulfillment of the Requirements \\
-      for the Degree of \\
-      \@degreeen \,of Engineering\\
-      in \\
-      \@major \\
-      \vspace{1cm}
-      Kaohsiung, Taiwan, Republic of China \\
-      \@monthen, \@yearen \\
-      \end{center}
-  \end{singlespace}
-  \begin{center}
-  \begin{doublespace}
-  \fontsize{14}{25}\selectfont
-  \begin{tabular}{l r}
-      \raisebox{5pt}{Approved by:} & \hspace{2cm}\\
-      \rule{5cm}{1pt}\hspace{1.5cm} & \hspace{1.5cm}\rule{5cm}{1pt} \\
-      \rule{5cm}{1pt}\hspace{1.5cm} & \hspace{1.5cm}\rule{5cm}{1pt} \\
-      \rule{5cm}{1pt}\hspace{1.5cm} & \hspace{1.5cm}\rule{5cm}{1pt} \\
-      \\
-  \end{tabular}
-  \begin{tabular}{l c r}
-      \raisebox{5pt}{Thesis Advisor:} & \rule{5cm}{1pt} & \hspace{0.1cm}\\
-      \raisebox{5pt}{Institute Director:} & \rule{5cm}{1pt} & \hspace{0.1cm}\\
-  \end{tabular}
-  \end{doublespace}
-  \end{center}
+    \begin{center}
+        \fontkai
+        % \vspace*{0.5cm}
+        {\fontsize{18pt}{0pt}\selectfont \textbf{National Kaohsiung University of Science and Technology}}\\[0.5cm]
+        {\fontsize{18pt}{0pt}\selectfont \textbf{(\@campusen\ Campus)\@classen \ Oral Defense Approval Form}}\\[1cm]
+        
+        {\large Major: \uline{\hspace{0.5cm} \makebox[8cm][s]{ {\@instituteen }} \hspace{0.5cm}}\@degreeen} \\[1cm]
+        % \vspace{0.5cm}
+        {\large {Candidate Name:\uline{\hspace{2cm}\makebox[2.5cm][s]{\@authoren}\hspace{2cm}} }}\\[1cm]
+        
+        \begin{flushleft}
+                {\large Title of \@classen: (Chinese):\hspace{1em}} \\[0.3cm]
+                                            \begin{center}{\large\hspace{1cm} \@titlezh }\end{center}
+                {\large Title of \@classen: (English/Japanese/German):}\\[0.3cm]
+                                            \begin{center}{\large\hspace{1cm} \@titleen}\end{center}
+        \end{flushleft}
+  
+        \vspace{0.1cm}
+        \begin{flushleft}
+        {\large \textbf{Signing below indicates that you agree with the following statement for the above-named student}}\\[0.3cm]
+        {\large {I agree that the above-named student's \@degreeen\ \@classen\ meets with the committee's approval.}}
+        \end{flushleft}
+        \vspace{0.1cm}
+        \leftline{\large Thesis Defense Committee}
+        \vspace{1cm}
+        \begin{tabular}{l l l}
+            \multicolumn{2}{ l }{\makebox[2cm][s]{\large Chair:\hspace{1em}} \rule{5cm}{1pt}} & {\large} \\[1cm]
+            \makebox[4.5cm][s]{\large Committee Members:\hspace{1em}} & \rule{4.5cm}{1pt} & \rule{4.5cm}{1pt} \\[1cm]
+            {\large \hspace{3cm}} & \rule{4.5cm}{1pt} & \rule{4.5cm}{1pt} \\[1cm]
+            {\large \hspace{3cm}} & \rule{4.5cm}{1pt} & \rule{4.5cm}{1pt} \\[1cm]
+            {\large \hspace{3cm}} & \rule{4.5cm}{1pt} & \rule{4.5cm}{1pt} 
+        \end{tabular}
+        \\[1cm]
+        {\large Advisor:\hspace{1em} \rule{5cm}{1pt}} \\[0.8cm]
+        {\large Director of the Institute:\hspace{1em} \rule{5cm}{1pt}} \\[0.8cm]
+        {\large Graduate School Approval Date:\hspace{1em} \uline{\hspace{2.5cm}\makebox[4cm][s]{/ / }} }\\[0.3cm]
+        
+        \rule{\linewidth}{1pt}
+        \rightline{\makebox[5cm][s]{Retention period: Permanent}}
+    \end{center}
   % \vspace*{-1cm}
+\end{singlespace}
 \end{titlepage}

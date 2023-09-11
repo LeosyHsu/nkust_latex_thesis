@@ -42,9 +42,10 @@
 
 % Declarations
 \newcommand{\puniversity}[2]{\gdef\@universityen{#1}\gdef\@universityzh{#2}}
+\newcommand{\pcampus}[2]{\gdef\@campusen{#1}\gdef\@campuszh{#2}}
 \newcommand{\pcollege}[2]{\gdef\@collegeen{#1}\gdef\@collegezh{#2}}
 \newcommand{\pinstitute}[2]{\gdef\@instituteen{#1}\gdef\@institutezh{#2}}
-\newcommand{\pclass}[2]{\gdef\@calssen{#1}\gdef\@classzh{#2}}
+\newcommand{\pclass}[2]{\gdef\@classen{#1}\gdef\@classzh{#2}}
 \newcommand{\pdegree}[2]{\gdef\@degreeen{#1}\gdef\@degreezh{#2}}
 \newcommand{\pmajor}[1]{\gdef\@major{#1}}
 \newcommand{\ptitle}[2]{\gdef\@titleen{#1}\gdef\@titlezh{#2}}
@@ -67,9 +68,7 @@
 \begin{center}
   \large
   \begin{singlespace}
-    \@universityzh \\
-    \@institutezh \\
-    \@degreezh \\[0.5cm]
+    \vspace*{0.5cm}
     \textbf{\@titlezh} \\[0.5cm]
   \end{singlespace}
   \begin{singlespace}
@@ -83,6 +82,9 @@
             指導教授：\@advisorzh \hspace{0.1cm}博士
         \end{flushright}
     \end{minipage}
+    \\
+    \vspace{1cm}
+    \@universityzh\@institutezh \@degreezh 班\\
   \end{singlespace}
   \LARGE {\makebox[4em][s]{摘要}} \\[0.5cm]
 \end{center}
@@ -99,9 +101,8 @@
 \begin{center}
   \large
   \begin{singlespace}
-    \@universityen \\
-    \@instituteen \\
-    \@degreeen \\[0.5cm]
+    \vspace*{0.5cm}
+    
     \textbf{\@titleen}\\[0.5cm]
   \end{singlespace}
   \begin{singlespace}
@@ -115,6 +116,10 @@
             Advisor：\@advisoren \hspace{0.1cm}Ph.D
         \end{flushright}
     \end{minipage}
+    \\
+    \vspace{0.5cm}
+    \@instituteen \\
+    \@universityen \\ 
   \end{singlespace}
   \LARGE {\makebox[4em][s]{Abstract}} \\[0.5cm]
 \end{center}
